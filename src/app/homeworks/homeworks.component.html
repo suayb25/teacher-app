@@ -1,0 +1,49 @@
+<h3 class="text-center" style="margin-top: 15px;"><b>{{day}} </b>için en son verilen ödev: {{todays_hws}}</h3>
+<hr>
+<h2 class="text-center">Ödev Ekleme</h2>
+
+<div class="col-lg-4 xs-4 mb-4 container" style="margin-top: 15px; margin-bottom: 150px;">
+    
+    <form  [formGroup]="hwForm" (ngSubmit)="onSubmit(hwForm.value)">
+        <div  class="mb-3">
+
+          <label for="lesson" class="form-label">Ödev Kitabı Seçimi</label>
+          <select class="form-select" aria-label="Ders Seçiniz" formControlName="lesson">
+          <option selected>--Lütfen Ders Seçiniz--</option>
+          <option value="Fen Bilimleri Ders Kitabı">Fen Bilimleri Ders Kitabı</option>
+            <option value="Fen Bilimleri Çalışma Kitabı">Fen Bilimleri Çalışma Kitabı</option>
+            <option value="Hayat Bilgisi Ders Kitabı">Hayat Bilgisi Ders Kitabı</option>
+            <option value="Hayat Bilgisi Çalışma Kitabı">Hayat Bilgisi Çalışma Kitabı</option>
+            <option value="Matematik Ders Kitabı" selected>Matematik Ders Kitabı</option>
+            <option value="Matematik Çalışma Kitabı" selected>Matematik Çalışma Kitabı</option>
+            <option value="Türkçe Ders Kitabı">Türkçe Ders Kitabı</option>
+            <option value="Türkçe Çalışma Kitabı">Türkçe Çalışma Kitabı</option>
+            
+          </select>
+        </div>
+        <div class="mb-3">
+            <label for="startingPage" class="form-label">Başlangıç Sayfa Numarası</label>
+            <input class="form-control" id="startingPage" formControlName="startingPage" name="startingPage" placeholder="Sayfa Numarası Giriniz" required type="number" value="" min="0" max="500"
+            onchange="document.getElementById('EndPage').min=this.value;document.getElementById('div_endpage').style.display ='';"/>  
+        </div>
+
+        <div class="mb-3" style="display: none;" id="div_endpage">
+            <label for="EndPage" class="form-label">Bitiş Sayfa Numarası</label>
+            <input class="form-control" id="EndPage" formControlName="EndPage" placeholder="Sayfa Numarası Giriniz" required type="number" value="" min="0" max="500"/>  
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="flexCheckDefault" required>
+          <label class="form-check-label" for="flexCheckDefault">
+            Eski ödevi geçersiz hale getir.
+          </label>
+        </div>
+
+        <div class="mb-3 text-center">
+            <label for="EndPage" class="form-label">Vereceğiniz ödevi bir sonraki dersiniz için veriyorsunuz. Ödevi velilerimiz bugün verilen ödevler içerisinde görecekler.</label>
+        </div>
+        <div class="col text-center">
+            <button type="submit" class="btn btn-primary">Yayınla</button>
+        </div>
+      </form>
+    </div>

@@ -1,0 +1,376 @@
+
+        
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Eğitim için İletişim Akışı</h1>
+                    <h4 class="text-white-50 mb-0">DialogFlow for Education</h4>
+                    <br>
+                    <p class="lead fw-normal mb-0" style="margin-top: 5px;">Çocuklarınızın ödevlerini takip edebilirsiniz.</p>
+                    <p class="lead fw-normal text-white-50 mb-0" style="font-size: 18px;">(İlkokul öğrencileri için)</p>
+                </div>
+                <br>
+                <div class="text-center text-white" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-secondary" routerLink="/dialog">Diyalog Başlat</button>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="../../assets/monday.jpg" alt="Monday" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Pazartesi Dersleri</h5>
+                                    <!-- Product price-->
+                                    <table class="text-center" style="width: 100%;">
+                                        <tr class="text-center" *ngFor="let lesson of monday;let i=index">
+                                        <th class="text-center" align="center" scope="row">{{i+1}} </th>
+                                        <td class="text-center" align="center" >{{lesson}} 
+                                            <div class="spinner-grow spinner-grow-sm text-danger" role="status" *ngIf="control_Monday && ((lesson=='Matematik' && control_Mat) || 
+                                            (lesson=='Türkçe' && control_Tur) || (lesson=='Hayat Bilgisi' && control_Hayat) || (lesson=='Fen Bilimleri' && control_Fen))">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                        </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" *ngIf="active_day=='Monday'">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#exampleModalCenter_Monday">
+                                        Ödevi Gör
+                                      </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                           <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
+                            <!-- Product image-->
+                            <img class="card-img-top" src="../../assets/tuesday.jpg" alt="Tuesday" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Salı Dersleri</h5>
+                                    <!-- Product reviews-->
+                                    <table class="text-center" style="width: 100%;">
+                                        <tr class="text-center" *ngFor="let lesson of tuesday;let i=index">
+                                        <th class="text-center" align="center" scope="row">{{i+1}}</th>
+                                        <td class="text-center" align="center" >{{lesson}}
+                                            <div class="spinner-grow spinner-grow-sm text-danger" role="status" *ngIf="control_Tuesday && ((lesson=='Matematik' && control_Mat) || 
+                                            (lesson=='Türkçe' && control_Tur) || (lesson=='Hayat Bilgisi' && control_Hayat) || (lesson=='Fen Bilimleri' && control_Fen))">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                        </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" *ngIf="active_day=='Tuesday'">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Ödevi Gör
+                                      </button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
+                            <!-- Product image-->
+                            <img class="card-img-top" src="../../assets/wednesday.jpg" alt="Wednesday" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Çarşamba Dersleri</h5>
+                                    <table class="text-center" style="width: 100%;">
+                                        <tr class="text-center" *ngFor="let lesson of wednesday;let i=index">
+                                        <th class="text-center" align="center" scope="row">{{i+1}}</th>
+                                        <td class="text-center" align="center" >{{lesson}}
+                                            <div class="spinner-grow spinner-grow-sm text-danger" role="status" *ngIf="control_Wednesday && ((lesson=='Matematik' && control_Mat) || 
+                                            (lesson=='Türkçe' && control_Tur) || (lesson=='Hayat Bilgisi' && control_Hayat) || (lesson=='Fen Bilimleri' && control_Fen))">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                        </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" *ngIf="active_day=='Wednesday'">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#exampleModalCenter_Wednesday">
+                                        Ödevi Gör
+                                      </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="../../assets/thursday.jpg" alt="Thursday" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Perşembe Dersleri</h5>
+                                    <!-- Product reviews-->
+                                    <table class="text-center" style="width: 100%;">
+                                        <tr class="text-center" *ngFor="let lesson of thursday;let i=index">
+                                        <th class="text-center" align="center" scope="row">{{i+1}}</th>
+                                        <td class="text-center" align="center" >{{lesson}}
+                                            <div class="spinner-grow spinner-grow-sm text-danger" role="status" *ngIf="control_Thursday && ((lesson=='Matematik' && control_Mat) || 
+                                            (lesson=='Türkçe' && control_Tur) || (lesson=='Hayat Bilgisi' && control_Hayat) || (lesson=='Fen Bilimleri' && control_Fen))">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                        </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" *ngIf="active_day=='Thursday'">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#exampleModalCenter_Thursday">
+                                        Ödevi Gör
+                                      </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                           <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
+                            <!-- Product image-->
+                            <img class="card-img-top" src="../../assets/friday.jpg" alt="Friday" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Cuma Dersleri</h5>
+                                    <table class="text-center" style="width: 100%;">
+                                        <tr class="text-center" *ngFor="let lesson of friday;let i=index">
+                                        <th class="text-center" align="center" scope="row">{{i+1}}</th>
+                                        <td class="text-center" align="center" >{{lesson}}
+                                            <div class="spinner-grow spinner-grow-sm text-danger" role="status" *ngIf="control_Friday && ((lesson=='Matematik' && control_Mat) || 
+                                            (lesson=='Türkçe' && control_Tur) || (lesson=='Hayat Bilgisi' && control_Hayat) || (lesson=='Fen Bilimleri' && control_Fen))">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                        </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" *ngIf="active_day=='Friday'">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#exampleModalCenter_Friday">
+                                        Ödevi Gör
+                                      </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Monday Modal-->
+<div class="modal fade" id="exampleModalCenter_Monday" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Güncel Ödevler</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-hover text-center" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Kitap</th>
+                    <th scope="col">Sayfa Aralığı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let homeworks of monday_hws;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{homeworks.Book}}</td>
+                    <td>{{homeworks.Pages}}</td>
+                </tr>
+            </tbody>
+      </table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Monday Modal-->
+
+
+<!-- Tuesday Modal-->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Güncel Ödevler</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover text-center" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Kitap</th>
+                            <th scope="col">Sayfa Aralığı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" *ngFor="let homeworks of tuesday_hws;let i=index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{homeworks.Book}}</td>
+                            <td>{{homeworks.Pages}}</td>
+                        </tr>
+                    </tbody>
+              </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+            </div>
+        </div>
+<!-- Tuesday Modal-->
+
+<!-- Wednesday Modal-->
+<div class="modal fade" id="exampleModalCenter_Wednesday" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Güncel Ödevler</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-hover text-center" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Kitap</th>
+                    <th scope="col">Sayfa Aralığı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let homeworks of wednesday_hws;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{homeworks.Book}}</td>
+                    <td>{{homeworks.Pages}}</td>
+                </tr>
+            </tbody>
+      </table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Wednesday Modal-->
+
+<!-- Thursday Modal-->
+<div class="modal fade" id="exampleModalCenter_Thursday" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Güncel Ödevler</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-hover text-center" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Kitap</th>
+                    <th scope="col">Sayfa Aralığı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let homeworks of thursday_hws;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{homeworks.Book}}</td>
+                    <td>{{homeworks.Pages}}</td>
+                </tr>
+            </tbody>
+      </table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Thursday Modal-->
+
+<!-- Friday Modal-->
+<div class="modal fade" id="exampleModalCenter_Friday" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Güncel Ödevler</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-hover text-center" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Kitap</th>
+                    <th scope="col">Sayfa Aralığı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let homeworks of friday_hws;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{homeworks.Book}}</td>
+                    <td>{{homeworks.Pages}}</td>
+                </tr>
+            </tbody>
+      </table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Friday Modal-->
